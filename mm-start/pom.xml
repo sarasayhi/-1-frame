@@ -20,6 +20,11 @@
             <artifactId>mm-resourceManage</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.bk</groupId>
+            <artifactId>mm-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

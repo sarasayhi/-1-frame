@@ -17,18 +17,9 @@
         </dependency>
         <dependency>
             <groupId>com.bk</groupId>
-            <artifactId>mm-module</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.bk</groupId>
             <artifactId>mm-resourceManage</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.bk</groupId>
-            <artifactId>mm-api</artifactId>
-        </dependency>
-
-
     </dependencies>
 
     <build>
@@ -38,7 +29,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration><!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.bk.safetyBK.DemoApplication</mainClass>
+                    <mainClass>com.bk.safetyBK.start.DemoApplication</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>

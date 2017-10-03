@@ -7,18 +7,53 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>mm-start</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>mm-start Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bk</groupId>
+            <artifactId>mm-module</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bk</groupId>
+            <artifactId>mm-resourceManage</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bk</groupId>
+            <artifactId>mm-api</artifactId>
+        </dependency>
+
+
     </dependencies>
+
     <build>
+        <plugins>
+            <plugin>
+                <!-- The plugin rewrites your manifest -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration><!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>com.bk.safetyBK.DemoApplication</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                        <!--可以生成不含依赖包的不可执行Jar包-->
+                        <!-- configuration>
+                          <classifier>exec</classifier>
+                        </configuration> -->
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
         <finalName>mm-start</finalName>
     </build>
 </project>

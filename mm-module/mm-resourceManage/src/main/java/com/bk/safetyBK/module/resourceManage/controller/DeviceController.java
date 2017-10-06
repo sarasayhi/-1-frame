@@ -13,6 +13,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +21,11 @@ import java.util.List;
  * @Description:
  * @Date: 21:51 2017/10/3
  */
+//1.	添加设备
+//2.	批量删除设备
+//3.	获取设备列表 分页
+//4.	搜索设备列表
+//5.	修改设备信息
 @Api
 @RestController
 @RequestMapping("/deviceService")
@@ -56,10 +62,10 @@ public class DeviceController {
         //1.json字符串转换为对象时做异常处理
         DeviceVO deviceVO = JSON.parseObject(params, DeviceVO.class);
         //2.检查设备信息所有字段是否为空，是否合法
-        DeviceDO deviceDO = deviceVO.getDeviceDO();
+//        DeviceDO deviceDO = deviceVO.getDeviceDO();
 //        deviceService.updateDevice(device);
         //3.检查组织机构id是否合法、存在
-        return new BaseResult<DeviceDO>(ConstParameter.DEVICE_TYPE,CodeConstant.SUCCESS,"更新设备成功",deviceDO);
+        return new BaseResult<DeviceDO>(ConstParameter.DEVICE_TYPE,CodeConstant.SUCCESS,"更新设备成功",deviceVO.getDeviceDO());
     }
 
     @RequestMapping(value = "/device/delete",  method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
@@ -82,11 +88,15 @@ public class DeviceController {
         //1.json字符串转换为对象时做异常处理
         System.out.println(areaId);//检查过来的是否是组织机构id
         //2.检查设备信息所有字段是否为空，是否合法
-
+        DeviceDO deviceDO = new DeviceDO("nn", "name", 5, "10.6.134.116", 8080, "22", "pwd", 2,1L,0);
+        DeviceDO deviceDO1 = new DeviceDO("nn", "name", 5, "10.6.134.116", 8080, "22", "pwd", 2,1L,0);
+        List<DeviceDO> list = new ArrayList<>();
+        list.add(deviceDO);
+        list.add(deviceDO1);
         //3.检查组织机构id是否合法、存在
 //            DeviceBO deviceBO = new DeviceBO(singleVO.getPageable(),singleVO.getData());
 //        List<Device> list = deviceService.getDeviceListByAreaId(deviceBO);
-        return new BaseResult<List<DeviceDO>>(ConstParameter.DEVICE_TYPE,CodeConstant.SUCCESS,"通过组织机构获取设备成功",null);
+        return new BaseResult<List<DeviceDO>>(ConstParameter.DEVICE_TYPE,CodeConstant.SUCCESS,"通过组织机构获取设备成功",list);
     }
 
     @RequestMapping(value = "/device/search/{name}",  method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
@@ -97,6 +107,11 @@ public class DeviceController {
         //3.检查组织机构id是否合法、存在
 //            DeviceBO deviceBO = new DeviceBO(singleVO.getPageable(),singleVO.getData());
 //        List<Device> list = deviceService.getDeviceListByName(deviceBO);
-        return new BaseResult<List<DeviceDO>>(ConstParameter.DEVICE_TYPE,CodeConstant.SUCCESS,"通过名称或ip获取设备成功",null);
+        DeviceDO deviceDO = new DeviceDO("nn", "name", 5, "10.6.134.116", 8080, "22", "pwd", 2,1L,0);
+        DeviceDO deviceDO1 = new DeviceDO("nn", "name", 5, "10.6.134.116", 8080, "22", "pwd", 2,1L,0);
+        List<DeviceDO> list = new ArrayList<>();
+        list.add(deviceDO);
+        list.add(deviceDO1);
+        return new BaseResult<List<DeviceDO>>(ConstParameter.DEVICE_TYPE,CodeConstant.SUCCESS,"通过名称或ip获取设备成功",list);
     }
 }

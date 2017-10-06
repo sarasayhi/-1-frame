@@ -15,8 +15,22 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.bk</groupId>
+            <artifactId>mm-base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bk</groupId>
+            <artifactId>mm-constant</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
@@ -24,24 +38,9 @@
             <version>1.5.13</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>1.11.7.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bk</groupId>
-            <artifactId>mm-base</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.36</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bk</groupId>
-            <artifactId>mm-constant</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>javax.persistence</groupId>

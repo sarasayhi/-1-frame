@@ -2,16 +2,17 @@ package com.bk.safetyBK.module.resourceManage.controller.VO;
 
 import com.bk.safetyBK.base.BaseVO;
 import com.bk.safetyBK.module.resourceManage.repository.DO.DeviceDO;
+import com.bk.safetyBK.module.resourceManage.repository.DO.PointDO;
 
 public class PointVO extends BaseVO {
-    private DeviceDO deviceDO;
+    private PointDO pointDO;
 
-    public DeviceDO getDeviceDO() {
-        return deviceDO;
+    public PointDO getPointDO() {
+        return pointDO;
     }
 
-    public void setDeviceDO(DeviceDO deviceDO) {
-        this.deviceDO = deviceDO;
+    public void setPointDO(PointDO pointDO) {
+        this.pointDO = pointDO;
     }
 
     /*@Override

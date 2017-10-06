@@ -19,15 +19,25 @@ public class DeviceDO implements Serializable {
     @SequenceGenerator(name="id_generator", sequenceName="id_sequence", initialValue = 28)
     @GeneratedValue(generator = "id_generator")
     private Long id;
+    @Column(name = "num",length = 64)
     private String num;
+    @Column(name = "name",length = 64)
     private String name;
+    @Column(name = "type",length = 64)
     private int type;
+    @Column(name = "IP",length = 15)
     private String IPAddress;
+    @Column(name = "port",length = 4)
     private int port;
+    @Column(name = "username",length = 64)
     private String userName;
+    @Column(name = "password",length = 64)
     private String password;
+    @Column(name = "nchan",length = 5)
     private int nchan;
+    @Column(name = "areaId",length = 64)
     private Long areaId;
+    @Column(name = "deleted",length = 1)
     private int deleted;
 
     //    @TableGenerator(name="id",allocationSize=1)
@@ -39,9 +49,19 @@ public class DeviceDO implements Serializable {
         System.out.print("test");
     }
 
-    @Id
-    @SequenceGenerator(name="id_generator", sequenceName="id_sequence", initialValue = 28)
-    @GeneratedValue(generator = "id_generator")
+    public DeviceDO(String num, String name, int type, String IPAddress, int port, String userName, String password, int nchan, Long areaId, int deleted) {
+        this.num = num;
+        this.name = name;
+        this.type = type;
+        this.IPAddress = IPAddress;
+        this.port = port;
+        this.userName = userName;
+        this.password = password;
+        this.nchan = nchan;
+        this.areaId = areaId;
+        this.deleted = deleted;
+    }
+
     public Long getId() {
         return id;
     }
@@ -50,7 +70,6 @@ public class DeviceDO implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "num",length = 64)
     public String getNum() {
         return num;
     }
@@ -59,7 +78,6 @@ public class DeviceDO implements Serializable {
         this.num = num;
     }
 
-    @Column(name = "name",length = 64)
     public String getName() {
         return name;
     }
@@ -68,7 +86,6 @@ public class DeviceDO implements Serializable {
         this.name = name;
     }
 
-    @Column(name = "type",length = 64)
     public int getType() {
         return type;
     }
@@ -77,7 +94,6 @@ public class DeviceDO implements Serializable {
         this.type = type;
     }
 
-    @Column(name = "IP",length = 15)
     public String getIPAddress() {
         return IPAddress;
     }
@@ -86,7 +102,6 @@ public class DeviceDO implements Serializable {
         this.IPAddress = IPAddress;
     }
 
-    @Column(name = "port",length = 4)
     public int getPort() {
         return port;
     }
@@ -94,7 +109,7 @@ public class DeviceDO implements Serializable {
     public void setPort(int port) {
         this.port = port;
     }
-    @Column(name = "username",length = 64)
+
     public String getUserName() {
         return userName;
     }
@@ -102,7 +117,7 @@ public class DeviceDO implements Serializable {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    @Column(name = "password",length = 64)
+
     public String getPassword() {
         return password;
     }
@@ -110,7 +125,7 @@ public class DeviceDO implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    @Column(name = "nchan",length = 5)
+
     public int getNchan() {
         return nchan;
     }
@@ -118,7 +133,7 @@ public class DeviceDO implements Serializable {
     public void setNchan(int nchan) {
         this.nchan = nchan;
     }
-    @Column(name = "areaId",length = 64)
+
     public Long getAreaId() {
         return areaId;
     }
@@ -126,7 +141,7 @@ public class DeviceDO implements Serializable {
     public void setAreaId(Long areaId) {
         this.areaId = areaId;
     }
-    @Column(name = "deleted",length = 1)
+
     public int getDeleted() {
         return deleted;
     }

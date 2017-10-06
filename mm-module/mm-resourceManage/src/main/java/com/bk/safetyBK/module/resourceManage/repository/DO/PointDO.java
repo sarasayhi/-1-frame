@@ -16,10 +16,22 @@ public class PointDO implements Serializable{
     private String name;
     private int type;
     private String longitude;
-    private int latitude;
+    private String latitude;
     private int chan;
     private Long deviceId;
     private Long areaId;
+
+    public PointDO(Long id, String num, String name, int type, String longitude, String latitude, int chan, Long deviceId, Long areaId) {
+        this.id = id;
+        this.num = num;
+        this.name = name;
+        this.type = type;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.chan = chan;
+        this.deviceId = deviceId;
+        this.areaId = areaId;
+    }
 
     public Long getId() {
         return id;
@@ -61,11 +73,11 @@ public class PointDO implements Serializable{
         this.longitude = longitude;
     }
 
-    public int getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
